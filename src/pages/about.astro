@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="À propos | Ewen Malaquin"
+  description="À propos Ewen Malaquin"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="À propos"
+        tagline="Découvrez mon parcours et mes compétences"
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Ewen Malaquin at work"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Parcours</h2>
+        <div class="content">
+          <p>
+            J'ai entamé ma carrière dans le secteur de la restauration et de
+            l'hôtellerie, occupant ensuite un poste de manager au sein d'un
+            centre d'affaires. Cependant, ma passion de longue date pour
+            l'informatique et les nouvelles technologies m'a poussé à
+            entreprendre une reconversion professionnelle. J'ai ainsi pris la
+            décision de me tourner vers le développement web. Depuis octobre
+            2022, je m'investis pleinement dans une formation à l'ENI de Rennes,
+            dans le but d'acquérir les compétences essentielles pour devenir un
+            professionnel du développement. Actuellement, je suis à la recherche
+            d'une opportunité au sein d'une entreprise à Rennes pour continuer
+            ma formation en vue d'obtenir le BAC+3 et décrocher le titre RNCP de
+            "concepteur développeur d'application".
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Diplôme</h2>
+        <div class="content">
+          <p>Titre RNCP de développeur web & web mobile de niveau BAC+2</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Languages</h2>
+        <div class="content">
+          <p>HTML, CSS, JavaScript, PHP, Java, SQL, Kotlin</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Soft skills</h2>
+        <div class="content">
+          <p>
+            Travail en équipe, Organisation, Polyvalent, Curieux, Autonome,
+            Créatif
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>

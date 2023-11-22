@@ -1,0 +1,63 @@
+---
+import Icon from './Icon.astro';
+---
+
+<section class="box skills">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="student" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Formation</h2>
+		<p>Actuellement en formation, je suis à la recherche d'une opportunité en alternance au sein d'une entreprise dans la région de Rennes pour continuer mon apprentissage. Récemment diplômé avec un niveau BAC+2 de l'ENI de Rennes, je suis prêt à mettre en pratique mes compétences.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="swap" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Reconversion</h2>
+		<p>
+			Je suis actuellement en reconversion professionnelle, ayant précédemment travaillé dans l'hôtellerie et occupé un poste de manager dans un centre d'affaires. Cette expérience m'a permis de développer des compétences transverses telles que le travail en équipe, l'organisation, et la relation client.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="stack" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Full-stack</h2>
+		<p>En tant que développeur junior Full Stack, j'ai exploré divers langages et frameworks, tout en acquérant de l'expérience dans la gestion des bases de données.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
